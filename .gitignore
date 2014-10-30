@@ -1,0 +1,7 @@
+
+## fomad .gitignore
+.sources
+r
+.classpath
+bin/*
+*.class

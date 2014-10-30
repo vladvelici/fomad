@@ -1,14 +1,23 @@
-fomad -  *F*ast c*O*mpile and *MA*ven *D*ependency management
-=============================================================
+fomad
+=====
+
+*F*ast c*O*mpile and *MA*ven *D*ependency management
+
 
 > This is a hack. Normally you would simply write in Go. >:)
 
-A small makefile and run script for those who hate maven and don't want to deal with it.
+A small Makefile for those who hate Maven and don't want to deal with it.
+
+init
+----
+From your project root:
+
+    curl http... | sh
 
 Why?
 ----
 
-Maven is slow. Compilation of small things just takes forever (5s) compared to less than a second. But maven is good at one thing: dependency management. As longs as you depend on some libraries that depend on some other libraries which also have some dependencies, downloading the jars manually is paninful. Lots of Java libraries out there give copy-and-paste Maven pom.xml dependency snippets.
+Maven is slow. Compilation of small things just takes forever (5s) compared to less than a second. But maven is good at one thing: dependency management. As longs as you depend on some libraries that depend on some other libraries which also have some dependencies, downloading the jars manually is painful. Lots of Java libraries out there give copy-and-paste Maven pom.xml dependency snippets.
 
 **Note:** fomad comes from a vim user. Might not be IDE friendly. 
 
@@ -30,9 +39,4 @@ You don't need the Maven source code structure anymore. Just a folder where you 
     .classpath  - file that holds the maven-generated classpath
     .sources    - java sources index for javac
 
-init
-----
-From your project root:
-
-    curl http... | sh
 
