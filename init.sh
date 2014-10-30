@@ -19,3 +19,6 @@ fi
 ## Appending to .gitignore
 curl https://raw.githubusercontent.com/vladvelici/fomad/master/.gitignore >> .gitignore
 
+## src and bin folders
+if [ -c src ]; then mkdir src; fi
+if [ -c bin ]; then mkdir bin; fi

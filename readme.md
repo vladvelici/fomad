@@ -1,18 +1,18 @@
 fomad
 =====
 
-*F*ast c*O*mpile and *MA*ven *D*ependency management
-
-
-> This is a hack. Normally you would simply write in Go. >:)
+**F**ast c**O**mpile and **MA**ven **D**ependency management
 
 A small Makefile for those who hate Maven and don't want to deal with it.
 
-init
-----
+> This is a hack. Normally you would simply write in Go. >:)
+
+init a project
+--------------
+
 From your project root:
 
-    curl http... | sh
+    curl https://raw.githubusercontent.com/vladvelici/fomad/master/init.sh | sh
 
 Why?
 ----
@@ -39,4 +39,14 @@ You don't need the Maven source code structure anymore. Just a folder where you 
     .classpath  - file that holds the maven-generated classpath
     .sources    - java sources index for javac
 
+Using ./r (the run script)
+--------------------------
+
+./r is a simple script genearted by the Makefile to help you run your Java applications without `mvn exec:java ...`.
+
+    ./r Hello arg1 arg2
+
+Is the equivalent of
+
+    java -cp <some-long-classpath-generated-by-maven> Hello arg1 arg2
 
