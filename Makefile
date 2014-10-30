@@ -2,10 +2,8 @@ SRCPATH=./src
 BINPATH=./bin
 
 ## Comile all .java files in src source to bin/.
-all: .classpath r
-	find ${SRCPATH} -name *.java > .sources && \
+all: .classpath r .sources
 	javac -d ${BINPATH} -cp "`cat .classpath`" @.sources
-	-rm .sources
 
 ## Create a runner script.
 r:
@@ -16,14 +14,19 @@ r:
 fetch: pom.xml
 	mvn dependency:resolve -q
 
-## Delete compiled files (.class).
+## Delete compiled files (.class) and source files index.
 clean:
 	-rm -r bin/*
+	-rm .sources
 
 ## Delete compiled files (.class), .classpath and the runner script.
 refresh: clean
 	-rm .classpath
 	-rm r
+
+## Create source files index
+.sources: ${SRCPATH}
+	find ${SRCPATH} -name *.java > .sources
 
 ## Generate the classpath
 .classpath: pom.xml
