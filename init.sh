@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## backup existing Makefile, if any
-if [ -c Makefile ]
+if [ -f Makefile ]
 then
     echo "Your old Makefile has been backed up in __Makefile."
     mv Makefile __Makefile
@@ -20,5 +20,5 @@ fi
 curl https://raw.githubusercontent.com/vladvelici/fomad/master/.gitignore >> .gitignore
 
 ## src and bin folders
-if [ -c src ]; then mkdir src; fi
-if [ -c bin ]; then mkdir bin; fi
+if [ ! -d src ]; then mkdir src; fi
+if [ ! -d bin ]; then mkdir bin; fi
